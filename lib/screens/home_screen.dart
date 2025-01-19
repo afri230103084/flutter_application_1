@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/dashboard_screen.dart';
-import 'package:flutter_application_1/screens/jadwal/jadwal_screen.dart';
 import 'package:flutter_application_1/screens/laporan/laporan_screen.dart';
-import 'package:flutter_application_1/screens/mahasiswa/mahasiswa_screen.dart';
 import 'package:flutter_application_1/screens/pemasukan/pemasukan_screen.dart';
 import 'package:flutter_application_1/screens/pengeluaran/pengeluaran_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
-import 'package:flutter_application_1/screens/transaksi/transaksi_screen.dart';
+import 'package:flutter_application_1/screens/student_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -79,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MahasiswaScreen()));
+                    MaterialPageRoute(builder: (context) => StudentPage()));
               },
               splashColor: Colors.teal[400],
               child: Center(
@@ -102,52 +100,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => JadwalScreen()));
-              },
-              splashColor: Colors.teal[400],
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.schedule,
-                      size: 70,
-                      color: Colors.amber[600],
-                    ),
-                    const Text("Jadwal", style: TextStyle(fontSize: 17.0)),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Card(
-            margin: const EdgeInsets.all(8),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TransaksiScreen()));
-              },
-              splashColor: Colors.teal[400],
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.compare_arrows,
-                      size: 70,
-                      color: Colors.orange[600],
-                    ),
-                    const Text("Transaksi", style: TextStyle(fontSize: 17.0)),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Card(
-            margin: const EdgeInsets.all(8),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => PemasukanScreen()));
               },
               splashColor: Colors.teal[400],
@@ -160,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       size: 70,
                       color: Colors.green[400],
                     ),
-                    const Text("Pemasukan", style: TextStyle(fontSize: 17.0)),
+                    const Text("Setor Tunai", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
@@ -185,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       size: 70,
                       color: Colors.red[600],
                     ),
-                    const Text("Pengeluaran", style: TextStyle(fontSize: 17.0)),
+                    const Text("Tarik Tunai", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
